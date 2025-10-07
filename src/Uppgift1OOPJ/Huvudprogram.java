@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Huvudprogram {
     public static void main(String[] args) {
 
-        Växt igge = new Kaktus("Igge", 0.20); //polymorfism, eller blir det polymorfism när man gör tex igge.toString()
+        Växt igge = new Kaktus("Igge", 0.2);
         Växt laura = new Palm("Laura", 5);
         Växt meatloaf = new KöttätandeVäxt("Meatloaf", 0.7);
         Växt olof = new Palm("Olof", 1);
@@ -24,7 +24,7 @@ public class Huvudprogram {
                 JOptionPane.showMessageDialog(null,
                         växt.getNamn() + " behöver " +
                                 växt.getVätskemängd() + " liter " +
-                                växt.getVätskeTyp());
+                                växt.getVätskeTyp() + "/dag");
                 break;
             }
         }

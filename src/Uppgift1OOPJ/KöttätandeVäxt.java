@@ -6,10 +6,6 @@ public class KöttätandeVäxt extends Växt {
     private static final double VätskeBasNivå = 0.1;
     private static final double VätskeMängd = 0.2;
 
-
-    KöttätandeVäxt() {
-    }
-
     public KöttätandeVäxt(String namn, double höjd) {
         super(namn, höjd);
     }

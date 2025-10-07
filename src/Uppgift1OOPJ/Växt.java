@@ -5,8 +5,7 @@ public abstract class Växt implements VätskaBeräkning {
     private String namn;
     private double höjd;
 
-    Växt() {
-    }
+    Växt() {}
 
     Växt(String namn, double höjd) {
         this.namn = namn;
