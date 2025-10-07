@@ -18,6 +18,7 @@ public class Huvudprogram {
         växtLista.add(olof);
 
         String växtNamn = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
+        boolean hittadVäxt = false;
 
         for (Växt växt : växtLista) {
             if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
@@ -35,8 +36,13 @@ public class Huvudprogram {
                         växt.getVätskeTyp() + "/dag";
 
                 JOptionPane.showMessageDialog(null, meddelande);
+
+                hittadVäxt = true;
                 break; // avsluta loopen
             }
+        }
+        if (!hittadVäxt) {
+            JOptionPane.showMessageDialog(null, "Varning, växten finns inte i hotellet!");
         }
     }
 }
