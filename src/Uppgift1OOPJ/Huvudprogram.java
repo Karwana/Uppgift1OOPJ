@@ -18,8 +18,23 @@ public class Huvudprogram {
         växtLista.add(olof);
 
         String växtNamn = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
-        boolean hittadVäxt = false;
 
+        if (växtNamn == null) {
+            JOptionPane.showMessageDialog(null, "Programmet avslutas");
+            return;
+        }
+
+        while (växtNamn.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Skriv en växt som finns i hotellet.");
+            växtNamn = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
+
+            if (växtNamn == null) {
+                JOptionPane.showMessageDialog(null, "Programmet avslutas");
+                return;
+            }
+        }
+
+        boolean hittadVäxt = false;
         for (Växt växt : växtLista) {
             if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
                 double vätskeMängd = växt.getVätskemängd();
