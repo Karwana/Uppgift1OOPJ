@@ -1,11 +1,17 @@
 package Uppgift1OOPJ;
 
 public enum VätskeTyp {
-    PROTEIN("Protein"),
-    VATTEN("Kranvatten"),
-    MINERALVATTEN("Mineralvatten");
+    PROTEIN("proteindryck"),
+    VATTEN("kranvatten"),
+    MINERALVATTEN("mineralvatten");
 
+    private final String vätskeTypNamn;
 
-    VätskeTyp(String VätskeTyp) {
+    VätskeTyp(String vätskeTypNamn) {
+        this.vätskeTypNamn = vätskeTypNamn;
+    }
+    @Override
+    public String toString() {
+        return vätskeTypNamn;
     }
 }
