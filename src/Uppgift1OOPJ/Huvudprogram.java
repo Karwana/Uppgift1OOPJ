@@ -21,11 +21,21 @@ public class Huvudprogram {
 
         for (Växt växt : växtLista) {
             if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
-                JOptionPane.showMessageDialog(null,
-                        växt.getNamn() + " behöver " +
-                                växt.getVätskemängd() + " liter " +
-                                växt.getVätskeTyp() + "/dag");
-                break;
+                double vätskeMängd = växt.getVätskemängd();
+                String enhet = "liter";
+
+                // Kaktus visas i cl
+                if (växt.getVätskeTyp() == VätskeTyp.MINERALVATTEN) {
+                    vätskeMängd = vätskeMängd * 100;
+                    enhet = "cl";
+                }
+
+                String meddelande = växt.getNamn() + " behöver " +
+                        vätskeMängd + " " + enhet + " " +
+                        växt.getVätskeTyp() + "/dag";
+
+                JOptionPane.showMessageDialog(null, meddelande);
+                break; // avsluta loopen
             }
         }
     }
