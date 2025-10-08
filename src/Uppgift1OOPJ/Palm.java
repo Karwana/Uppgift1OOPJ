@@ -10,17 +10,17 @@ public class Palm extends Växt {
         super(namn, höjd);
     }
 
-    @Override
+    @Override   //interface
     public double getVätskemängd() {
         return VätskeMängd * getHöjd();
     }
 
-    @Override
+    @Override   //enum
     public VätskeTyp getVätskeTyp() {
         return VÄTSKE_TYP;
     }
 
-    @Override
+    @Override   //enum
     public String getEnhet() {
         return ENHET.name();
     }
