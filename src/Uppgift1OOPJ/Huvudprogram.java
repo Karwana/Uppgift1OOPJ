@@ -35,17 +35,17 @@ public class Huvudprogram {
             växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
 
             if (växtNamn == null) {
-                JOptionPane.showMessageDialog(null, CANCEL_PROMPT); // för "Cancel" igen
+                JOptionPane.showMessageDialog(null, CANCEL_PROMPT); // för "Cancel" igen, NullPointerException
                 return;
             }
         }
 
         boolean hittadVäxt = false;
-        växtNamn = växtNamn.trim(); // ta bort mellanrum från t.ex. "Laura    "
+        växtNamn = växtNamn.trim(); // ta bort mellanrum från input så "Laura   " funkar
         for (Växt växt : växtLista) {
             if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
-                String meddelande = växt.getInstruktioner();    // polymorfism
-                JOptionPane.showMessageDialog(null, meddelande);
+                String VäxtInformation = växt.getInstruktioner();    // polymorfism
+                JOptionPane.showMessageDialog(null, VäxtInformation);
                 hittadVäxt = true;
                 break; // avsluta loopen
             }
