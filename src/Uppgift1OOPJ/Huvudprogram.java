@@ -7,7 +7,7 @@ public class Huvudprogram {
 
     private static final String OPENING_PROMPT = "Vilken växt ska få vätska?";
     private static final String FEL_VÄXT = "Varning, växten finns inte i hotellet!";
-    private static final String CANCEL = "Programmet avslutas";
+    private static final String CANCEL_PROMPT = "Programmet avslutas";
     private static final String FEL_TOMT = "Skriv en växt som finns i hotellet";
 
     public Huvudprogram() {
@@ -26,7 +26,7 @@ public class Huvudprogram {
         String växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
 
         if (växtNamn == null) {
-            JOptionPane.showMessageDialog(null, CANCEL);
+            JOptionPane.showMessageDialog(null, CANCEL_PROMPT);
             return;
         }
 
@@ -35,7 +35,7 @@ public class Huvudprogram {
             växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
 
             if (växtNamn == null) {
-                JOptionPane.showMessageDialog(null, CANCEL); // för "Cancel" igen
+                JOptionPane.showMessageDialog(null, CANCEL_PROMPT); // för "Cancel" igen
                 return;
             }
         }
