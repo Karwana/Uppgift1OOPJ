@@ -19,4 +19,9 @@ public abstract class Växt implements VätskaBeräkning {
         return höjd;
     }
 
+    public String getInstruktioner() {
+        return getNamn() + " behöver " +
+                getVätskemängd() + " " + getEnhet() + " " +
+                getVätskeTyp() + "/dag";
+    }
 }

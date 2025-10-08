@@ -3,6 +3,7 @@ package Uppgift1OOPJ;
 public class Kaktus extends Växt {
 
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.MINERALVATTEN;
+    private static final Enhet ENHET = Enhet.CL;
     private static final double VätskeMängd = 0.02;
 
     public Kaktus(String namn, double höjd) {
@@ -17,6 +18,11 @@ public class Kaktus extends Växt {
     @Override
     public VätskeTyp getVätskeTyp() {
         return VÄTSKE_TYP;
+    }
+
+    @Override
+    public String getEnhet() {
+        return ENHET.name();
     }
 }
 

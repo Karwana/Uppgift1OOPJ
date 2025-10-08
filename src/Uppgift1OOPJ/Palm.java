@@ -3,6 +3,7 @@ package Uppgift1OOPJ;
 public class Palm extends Växt {
 
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.VATTEN;
+    private static final Enhet ENHET = Enhet.LITER;
     private static final double VätskeMängd = 0.5;
 
     public Palm(String namn, double höjd) {
@@ -17,5 +18,10 @@ public class Palm extends Växt {
     @Override
     public VätskeTyp getVätskeTyp() {
         return VÄTSKE_TYP;
+    }
+
+    @Override
+    public String getEnhet() {
+        return ENHET.name();
     }
 }

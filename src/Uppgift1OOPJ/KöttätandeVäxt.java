@@ -3,6 +3,8 @@ package Uppgift1OOPJ;
 public class KöttätandeVäxt extends Växt {
 
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.PROTEIN;
+    private static final Enhet ENHET = Enhet.LITER;
+
     private static final double VätskeBasNivå = 0.1;
     private static final double VätskeMängd = 0.2;
 
@@ -18,5 +20,10 @@ public class KöttätandeVäxt extends Växt {
     @Override
     public VätskeTyp getVätskeTyp() {
         return VÄTSKE_TYP;
+    }
+
+    @Override
+    public String getEnhet() {
+        return ENHET.name();
     }
 }

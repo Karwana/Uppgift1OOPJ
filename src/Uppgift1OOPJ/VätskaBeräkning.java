@@ -4,4 +4,6 @@ interface VätskaBeräkning {
     double getVätskemängd();
 
     VätskeTyp getVätskeTyp();
+
+    String getEnhet();
 }

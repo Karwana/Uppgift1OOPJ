@@ -1,5 +1,7 @@
 package Uppgift1OOPJ;
 
+import org.w3c.dom.ls.LSOutput;
+
 public enum VätskeTyp {
     PROTEIN("proteindryck"),
     VATTEN("kranvatten"),
