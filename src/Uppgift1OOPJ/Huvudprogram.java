@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Huvudprogram {
-    public static void main(String[] args) {
+
+    public Huvudprogram() {
 
         Växt igge = new Kaktus("Igge", 0.2);
         Växt laura = new Palm("Laura", 5);
@@ -24,34 +25,22 @@ public class Huvudprogram {
             return;
         }
 
-        while (växtNamn.isBlank()) {
+        while (växtNamn.isBlank()) { //isBlank istället för isEmpty
             JOptionPane.showMessageDialog(null, "Skriv en växt som finns i hotellet.");
             växtNamn = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
 
             if (växtNamn == null) {
-                JOptionPane.showMessageDialog(null, "Programmet avslutas");
+                JOptionPane.showMessageDialog(null, "Programmet avslutas"); // för "Cancel" igen
                 return;
             }
         }
 
         boolean hittadVäxt = false;
+        växtNamn = växtNamn.trim(); // ta bort mellanrum från t.ex. "Laura    "
         for (Växt växt : växtLista) {
             if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
-                double vätskeMängd = växt.getVätskemängd();
-                String enhet = "liter";
-
-                // Kaktus visas i cl
-                if (växt.getVätskeTyp() == VätskeTyp.MINERALVATTEN) {
-                    vätskeMängd = vätskeMängd * 100;
-                    enhet = "cl";
-                }
-
-                String meddelande = växt.getNamn() + " behöver " +
-                        vätskeMängd + " " + enhet + " " +
-                        växt.getVätskeTyp() + "/dag";
-
+                String meddelande = växt.getInstruktioner();
                 JOptionPane.showMessageDialog(null, meddelande);
-
                 hittadVäxt = true;
                 break; // avsluta loopen
             }
@@ -59,5 +48,9 @@ public class Huvudprogram {
         if (!hittadVäxt) {
             JOptionPane.showMessageDialog(null, "Varning, växten finns inte i hotellet!");
         }
+    }
+
+    public static void main(String[] args) {
+        Huvudprogram huvudprogram = new Huvudprogram();
     }
 }

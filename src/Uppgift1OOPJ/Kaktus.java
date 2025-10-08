@@ -11,7 +11,7 @@ public class Kaktus extends Växt {
 
     @Override
     public double getVätskemängd() {
-        return VätskeMängd;
+        return VätskeMängd * 100;
     }
 
     @Override
