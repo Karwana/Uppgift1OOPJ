@@ -5,6 +5,11 @@ import java.util.ArrayList;
 
 public class Huvudprogram {
 
+    private static final String OPENING_PROMPT = "Vilken växt ska få vätska?";
+    private static final String FEL_VÄXT = "Varning, växten finns inte i hotellet!";
+    private static final String CANCEL = "Programmet avslutas";
+    private static final String FEL_TOMT = "Skriv en växt som finns i hotellet.";
+
     public Huvudprogram() {
 
         Växt igge = new Kaktus("Igge", 0.2);
@@ -18,19 +23,19 @@ public class Huvudprogram {
         växtLista.add(meatloaf);
         växtLista.add(olof);
 
-        String växtNamn = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
+        String växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
 
         if (växtNamn == null) {
-            JOptionPane.showMessageDialog(null, "Programmet avslutas");
+            JOptionPane.showMessageDialog(null, CANCEL);
             return;
         }
 
         while (växtNamn.isBlank()) { //isBlank istället för isEmpty
-            JOptionPane.showMessageDialog(null, "Skriv en växt som finns i hotellet.");
-            växtNamn = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
+            JOptionPane.showMessageDialog(null, FEL_TOMT);
+            växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
 
             if (växtNamn == null) {
-                JOptionPane.showMessageDialog(null, "Programmet avslutas"); // för "Cancel" igen
+                JOptionPane.showMessageDialog(null, CANCEL); // för "Cancel" igen
                 return;
             }
         }
@@ -46,7 +51,7 @@ public class Huvudprogram {
             }
         }
         if (!hittadVäxt) {
-            JOptionPane.showMessageDialog(null, "Varning, växten finns inte i hotellet!");
+            JOptionPane.showMessageDialog(null, FEL_VÄXT);
         }
     }
 
