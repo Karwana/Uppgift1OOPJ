@@ -1,6 +1,6 @@
 package Uppgift1OOPJ;
-// arv
-public class Kaktus extends Växt {
+// subklass
+public class Kaktus extends Växt {  // arv
     // enum för VätskeTyp && Enhet
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.MINERALVATTEN;
     private static final Enhet ENHET = Enhet.CL;

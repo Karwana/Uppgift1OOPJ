@@ -1,6 +1,6 @@
 package Uppgift1OOPJ;
-// arv
-public class KöttätandeVäxt extends Växt {
+// subklass
+public class KöttätandeVäxt extends Växt {  // arv
     // enum för VätskeTyp && Enhet
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.PROTEIN;
     private static final Enhet ENHET = Enhet.LITER;

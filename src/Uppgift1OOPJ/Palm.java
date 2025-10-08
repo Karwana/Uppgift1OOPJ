@@ -1,6 +1,6 @@
 package Uppgift1OOPJ;
-// arv
-public class Palm extends Växt {
+// subklass
+public class Palm extends Växt {    // arv
     // enum för VätskeTyp && Enhet
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.VATTEN;
     private static final Enhet ENHET = Enhet.LITER;

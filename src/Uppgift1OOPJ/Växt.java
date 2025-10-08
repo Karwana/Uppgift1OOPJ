@@ -1,5 +1,5 @@
 package Uppgift1OOPJ;
-
+// superklass
 public abstract class Växt implements VätskaBeräkning {
     // inkapsling
     private String namn;
