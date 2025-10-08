@@ -1,5 +1,5 @@
 package Uppgift1OOPJ;
-
+// enum
 public enum Enhet {
     LITER("liter"),
     CL("cl");

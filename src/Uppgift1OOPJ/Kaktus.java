@@ -1,7 +1,7 @@
 package Uppgift1OOPJ;
-
+// arv
 public class Kaktus extends Växt {
-
+    // enum för VätskeTyp && Enhet
     private static final VätskeTyp VÄTSKE_TYP = VätskeTyp.MINERALVATTEN;
     private static final Enhet ENHET = Enhet.CL;
     private static final double VätskeMängd = 2;  //kaktus 2 cl = 0.02 liter

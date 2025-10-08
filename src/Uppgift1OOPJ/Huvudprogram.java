@@ -8,10 +8,10 @@ public class Huvudprogram {
     private static final String OPENING_PROMPT = "Vilken växt ska få vätska?";
     private static final String FEL_VÄXT = "Varning, växten finns inte i hotellet!";
     private static final String CANCEL = "Programmet avslutas";
-    private static final String FEL_TOMT = "Skriv en växt som finns i hotellet.";
+    private static final String FEL_TOMT = "Skriv en växt som finns i hotellet";
 
     public Huvudprogram() {
-
+        // polymorfism
         Växt igge = new Kaktus("Igge", 0.2);
         Växt laura = new Palm("Laura", 5);
         Växt meatloaf = new KöttätandeVäxt("Meatloaf", 0.7);
@@ -44,7 +44,7 @@ public class Huvudprogram {
         växtNamn = växtNamn.trim(); // ta bort mellanrum från t.ex. "Laura    "
         for (Växt växt : växtLista) {
             if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
-                String meddelande = växt.getInstruktioner();
+                String meddelande = växt.getInstruktioner();    // polymorfism
                 JOptionPane.showMessageDialog(null, meddelande);
                 hittadVäxt = true;
                 break; // avsluta loopen

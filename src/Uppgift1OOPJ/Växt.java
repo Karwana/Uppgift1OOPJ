@@ -1,7 +1,7 @@
 package Uppgift1OOPJ;
 
 public abstract class Växt implements VätskaBeräkning {
-
+    // inkapsling
     private String namn;
     private double höjd;
 
@@ -18,7 +18,7 @@ public abstract class Växt implements VätskaBeräkning {
     public double getHöjd() {
         return höjd;
     }
-
+    // polymorfism
     public String getInstruktioner() {
         return getNamn() + " behöver " +
                 getVätskemängd() + " " + getEnhet() + " " +
