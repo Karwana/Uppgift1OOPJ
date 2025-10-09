@@ -12,17 +12,17 @@ public class KöttätandeVäxt extends Växt {  // arv
         super(namn, höjd);
     }
 
-    @Override
-    public double getVätskemängd() {    // interface
+    @Override   // interface
+    public double getVätskemängd() {
         return VätskeBasNivå + (VätskeMängd * getHöjd());
     }
 
-    @Override   //enum
+    @Override   // enum
     public VätskeTyp getVätskeTyp() {
         return VÄTSKE_TYP;
     }
 
-    @Override   //enum
+    @Override   // enum
     public String getEnhet() {
         return ENHET.name();
     }

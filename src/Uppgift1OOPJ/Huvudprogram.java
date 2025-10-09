@@ -23,27 +23,27 @@ public class Huvudprogram {
         växtLista.add(meatloaf);
         växtLista.add(olof);
 
-        String växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
+        String växtInput = JOptionPane.showInputDialog(OPENING_PROMPT);
 
-        if (växtNamn == null) {
+        if (växtInput == null) {
             JOptionPane.showMessageDialog(null, CANCEL_PROMPT);
             return;
         }
 
-        while (växtNamn.isBlank()) { //isBlank istället för isEmpty
+        while (växtInput.isBlank()) { //isBlank istället för isEmpty
             JOptionPane.showMessageDialog(null, FEL_TOMT);
-            växtNamn = JOptionPane.showInputDialog(OPENING_PROMPT);
+            växtInput = JOptionPane.showInputDialog(OPENING_PROMPT);
 
-            if (växtNamn == null) {
+            if (växtInput == null) {
                 JOptionPane.showMessageDialog(null, CANCEL_PROMPT); // för "Cancel" igen, NullPointerException
                 return;
             }
         }
 
         boolean hittadVäxt = false;
-        växtNamn = växtNamn.trim(); // ta bort mellanrum från input så "Laura   " funkar
+        växtInput = växtInput.trim(); // ta bort mellanrum från input så "Laura   " funkar
         for (Växt växt : växtLista) {
-            if (växt.getNamn().equalsIgnoreCase(växtNamn)) {
+            if (växt.getNamn().equalsIgnoreCase(växtInput)) {
                 String VäxtInformation = växt.getInstruktioner();    // polymorfism
                 JOptionPane.showMessageDialog(null, VäxtInformation);
                 hittadVäxt = true;

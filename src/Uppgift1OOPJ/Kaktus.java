@@ -10,17 +10,17 @@ public class Kaktus extends Växt {  // arv
         super(namn, höjd);
     }
 
-    @Override   //interface
+    @Override   // interface
     public double getVätskemängd() {
         return VätskeMängd;
     }
 
-    @Override   //enum
+    @Override   // enum
     public VätskeTyp getVätskeTyp() {
         return VÄTSKE_TYP;
     }
 
-    @Override   //enum
+    @Override   // enum
     public String getEnhet() {
         return ENHET.name();
     }
